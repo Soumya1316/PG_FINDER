@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PG Finder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><span>PG</span>Finder</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Find Your Perfect PG Near PICT</h1>
+                <p>Discover PG accommodations tailored to your needs - budget-friendly options, delicious food, proximity to college, and safe localities.</p>
+                <a href="#search" class="btn btn-primary">Find PGs Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="search" class="search-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Search PG Accommodations</h2>
+                <p>Filter options based on your preferences</p>
+            </div>
+            <div class="search-container">
+                <div class="search-filters">
+                    <div class="filter-group">
+                        <label for="location">Location</label>
+                        <select id="location">
+                            <option value="all">All Areas</option>
+                            <option value="katraj">Katraj</option>
+                            <option value="dhankawadi">Dhankawadi</option>
+                            <option value="bibwewadi">Bibwewadi</option>
+                            <option value="kondhwa">Kondhwa</option>
+                            <option value="wanowrie">Wanowrie</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="price-range">Price Range</label>
+                        <div class="range-slider">
+                            <input type="range" id="price-range" min="3000" max="20000" step="500" value="10000">
+                            <span id="price-value">₹10,000</span>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label for="distance">Distance from PICT</label>
+                        <div class="range-slider">
+                            <input type="range" id="distance" min="0" max="5" step="0.5" value="2">
+                            <span id="distance-value">2 km</span>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label for="pg-type">PG Type</label>
+                        <select id="pg-type">
+                            <option value="all">All Types</option>
+                            <option value="boys">Boys</option>
+                            <option value="girls">Girls</option>
+                            <option value="co-ed">Co-ed</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="food-type">Food Preference</label>
+                        <select id="food-type">
+                            <option value="all">All Options</option>
+                            <option value="veg">Vegetarian</option>
+                            <option value="non-veg">Non-Vegetarian</option>
+                            <option value="both">Both Available</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="room-type">Room Type</label>
+                        <select id="room-type">
+                            <option value="all">All Types</option>
+                            <option value="single">Single</option>
+                            <option value="double">Double Sharing</option>
+                            <option value="triple">Triple Sharing</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="safety">Minimum Safety Rating</label>
+                        <select id="safety">
+                            <option value="0">Any Rating</option>
+                            <option value="3">3+ Stars</option>
+                            <option value="4">4+ Stars</option>
+                            <option value="4.5">4.5+ Stars</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="amenities">Amenities</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="amenities" value="wifi"> WiFi</label>
+                            <label><input type="checkbox" name="amenities" value="ac"> AC</label>
+                            <label><input type="checkbox" name="amenities" value="laundry"> Laundry</label>
+                            <label><input type="checkbox" name="amenities" value="hot-water"> Hot Water</label>
+                        </div>
+                    </div>
+                    <button id="search-btn" class="btn btn-primary">Search PGs</button>
+                    <button id="reset-btn" class="btn btn-secondary">Reset Filters</button>
+                </div>
+                <div class="search-results">
+                    <div class="results-header">
+                        <h3>Available PG Accommodations</h3>
+                        <p id="results-count">Showing all results</p>
+                    </div>
+                    <div id="pg-listings" class="pg-listings">
+                        <!-- PG listings will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="featured" class="featured-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured PG Accommodations</h2>
+                <p>Highly rated PGs near PICT that students love</p>
+            </div>
+            <div class="featured-listings">
+                <div class="pg-card">
+                    <div class="pg-image">
+                        <img src="images/pgphoto.png" alt="Sunshine PG">
+                        <div class="pg-badge girls">Girls</div>
+                    </div>
+                    <div class="pg-details">
+                        <h3>Sunshine PG</h3>
+                        <div class="pg-location">
+                            <i class="icon-location"></i>
+                            <span>Dhankawadi, 0.8 km from PICT</span>
+                        </div>
+                        <div class="pg-rating">
+                            <i class="icon-star"></i>
+                            <span>4.5</span>
+                        </div>
+                        <div class="pg-features">
+                            <span class="feature"><i class="icon-food"></i> Veg Food</span>
+                            <span class="feature"><i class="icon-wifi"></i> WiFi</span>
+                            <span class="feature"><i class="icon-security"></i> High Security</span>
+                        </div>
+                        <div class="pg-price">₹8,000/month</div>
+                        <a href="#" class="btn btn-secondary view-details" data-id="1">View Details</a>
+                    </div>
+                </div>
+                <div class="pg-card">
+                    <div class="pg-image">
+                        <img src="images/1.jpg" alt="Royal Residency">
+                        <div class="pg-badge boys">Boys</div>
+                    </div>
+                    <div class="pg-details">
+                        <h3>Royal Residency</h3>
+                        <div class="pg-location">
+                            <i class="icon-location"></i>
+                            <span>Katraj, 1.2 km from PICT</span>
+                        </div>
+                        <div class="pg-rating">
+                            <i class="icon-star"></i>
+                            <span>4.2</span>
+                        </div>
+                        <div class="pg-features">
+                            <span class="feature"><i class="icon-food"></i> Both Veg/Non-veg</span>
+                            <span class="feature"><i class="icon-ac"></i> AC Rooms</span>
+                            <span class="feature"><i class="icon-security"></i> 24/7 Security</span>
+                        </div>
+                        <div class="pg-price">₹10,000/month</div>
+                        <a href="#" class="btn btn-secondary view-details" data-id="2">View Details</a>
+                    </div>
+                </div>
+                <div class="pg-card">
+                    <div class="pg-image">
+                        <img src="images/2.jpg" alt="Student Haven">
+                        <div class="pg-badge coed">Co-ed</div>
+                    </div>
+                    <div class="pg-details">
+                        <h3>Student Haven</h3>
+                        <div class="pg-location">
+                            <i class="icon-location"></i>
+                            <span>Bibwewadi, 1.5 km from PICT</span>
+                        </div>
+                        <div class="pg-rating">
+                            <i class="icon-star"></i>
+                            <span>4.0</span>
+                        </div>
+                        <div class="pg-features">
+                            <span class="feature"><i class="icon-food"></i> Non-veg Food</span>
+                            <span class="feature"><i class="icon-wifi"></i> WiFi</span>
+                            <span class="feature"><i class="icon-laundry"></i> Laundry</span>
+                        </div>
+                        <div class="pg-price">₹7,500/month</div>
+                        <a href="#" class="btn btn-secondary view-details" data-id="3">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Finding your ideal PG accommodation near PICT is simple</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="icon-search"></i>
+                    </div>
+                    <h3>Search</h3>
+                    <p>Enter your preferences like budget, location, and amenities</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="icon-filter"></i>
+                    </div>
+                    <h3>Filter</h3>
+                    <p>Narrow down options based on your specific requirements</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="icon-home"></i>
+                    </div>
+                    <h3>Visit</h3>
+                    <p>Schedule visits to your shortlisted PG accommodations</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="icon-check"></i>
+                    </div>
+                    <h3>Move In</h3>
+                    <p>Select your perfect PG and move in hassle-free</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Students Say</h2>
+                <p>Hear from PICT students who found their ideal PG accommodations</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-container" id="testimonial-container">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"Found my perfect PG within a day! The filters helped me narrow down exactly what I was looking for - a vegetarian mess within 1km of PICT."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images\blank-profile-picture-973460_960_720.webp" alt="Priya Sharma">
+                            <div>
+                                <h4>Priya Sharma</h4>
+                                <p>2nd Year Computer Engineering</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"As a student on a tight budget, I was able to find an affordable PG with all the amenities I needed. The safety ratings were especially helpful."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="images\blank-profile-picture-973460_960_720.webp" alt="Rahul Patel">
+                            <div>
+                                <h4>Rahul Patel</h4>
+                                <p>3rd Year IT</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"The detailed information about each PG helped me make an informed decision. I love my new accommodation!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="" alt="Ananya Desai">
+                            <div>
+                                <h4>Ananya Desai</h4>
+                                <p>1st Year Computer Science</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button id="prev-testimonial" class="testimonial-btn prev">❮</button>
+                    <div class="testimonial-dots" id="testimonial-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button id="next-testimonial" class="testimonial-btn next">❯</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Have questions or need assistance? Get in touch with us</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="icon-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+91 98765 43210</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="icon-email"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@pgfinder.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="icon-location"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>Near PICT College, Dhankawadi, Pune - 411043</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><span>PG</span>Finder</h2>
+                    <p>Helping PICT students find their ideal PG accommodations since 2023.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#search">Search PGs</a></li>
+                            <li><a href="#featured">Featured PGs</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Areas</h3>
+                        <ul>
+                            <li><a href="#">Katraj</a></li>
+                            <li><a href="#">Dhankawadi</a></li>
+                            <li><a href="#">Bibwewadi</a></li>
+                            <li><a href="#">Kondhwa</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="icon-facebook"></i></a>
+                            <a href="#" class="social-link"><i class="icon-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="icon-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="icon-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 PG Finder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PG Details Modal -->
+    <div id="pg-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-content">
+                <!-- Modal content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
